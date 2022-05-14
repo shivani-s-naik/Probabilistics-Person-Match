@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Matching Percentile</title>
+        <style>
+            label {
+                width: 100%;
+                padding: 15px;  
+                margin: 5px 100px 22px 10px; 
+                display: inline-block;
+                font-weight: bold;
+                font: bold;                
+                text-align: left;
+            }
+            
+            input[type=text], input[type=password], textarea {  
+            width: 200%;  
+            padding: 15px;  
+            margin: 5px 0 22px 0;  
+            display: inline-block;  
+            border: none;  
+            background: #f1f1f1;  
+            }  
+            table{
+                background-color: lightblue;
+                /* background-color: cadetblue; */
+            }
+            form{
+                background-color: lightblue;
+                margin: 0px 65px 0px 65px; 
+                /* background-color: cadetblue; */
+            }
+            div{
+                background-color: lightblue;
+                margin: 0px 65px 0px 65px;
+            }
+            hr {  
+                border: 1.3px solid #280606;              
+                  
+                background-color: #280606;
+            } 
+            h1{
+                color: rgb(38, 9, 53);
+            }
+            h6{
+                font-style: italic;
+                color: rgb(96, 61, 114);
+            }
+            body{  
+                font-family: Arial , Helvetica, sans-serif;  
+                background-color: rgb(180, 146, 151);  
+            }  
+            .container {  
+                margin: 0px 65px 0px 65px;  
+                background-color: rgb(29, 95, 210);  
+            }  
+            button {  
+                background-color: #063507;  
+                color: white;  
+                padding: 16px 20px;  
+                margin: 8px 0;  
+                border: none;  
+                cursor: pointer;  
+                width: 50%;  
+                opacity: 0.9;  
+            }   
+            /* #072408; */
+        </style>
+        <!-- <link rel="stylesheet" href="styles.css"> -->
+    </head>
+    <body>
+        
+        <div >
+            <h1 align="center">Probabilistics Person Match</h1>
+            <h6 align="center">Please fill up the below form to generate Matching Percentile Results</h6>
+            <hr>
+        </div>
+        
+        <!-- <form method="post" action="/Result" align="center" class="container"> 
+            <p>
+                <label for="Fname">First Name : </label>
+                <input type="text" id="Fname" name="Fname" placeholder="Enter First Name"/><br/><br/>
+            </p>
+            <p>
+                <label for="Lname">Last Name : </label>
+                <input type="text" id="Lname" name="Lname" placeholder="Enter Last Name"/><br/><br/>
+            </p>
+            <p>
+                <label for="dob">Date of Birth : </label>
+                <input type="text" id="dob" name="dob" placeholder="dd/mm/yyyy"/><br/><br/>
+            </p>
+            <p>
+                <label for="gender">Gender : </label>
+                <input type="radio" name="gender" id="gender" value="female"/>Female
+                <input type="radio" name="gender" id="gender" value="male"/>Male
+                <input type="radio" name="gender" id="gender" value="other"/>Other
+                <br/><br/>
+            </p>
+            <p>
+                <label for="occupation">Ocuupation : </label>
+                <input type="text" id="occupation" name="occupation" placeholder="Ex: IT or Dental"/><br/><br/>
+            </p>
+            <p>
+                <label for="caste/religion">Caste/Religion : </label>
+                <input type="text" id="caste/religion" name="caste/religion" placeholder="Enter Caste/Religion"/><br/><br/>
+            </p>
+            <p>
+                <label for="city">City : </label>
+                <input type="text" id="city" name="city" placeholder="Enter City"/><br/><br/>
+            </p>
+            <p>
+                <label for="pincode">Pin Code : </label>
+                <input type="text" id="pincode" name="pincode" placeholder="Ex: 411041"/><br/><br/>
+            </p>
+            
+            
+            
+            
+            
+            
+            
+
+
+        </form> -->
+        <form method="post" action="/Result" align="center">
+            <table align="center">
+                <tr>
+                    <td><label for="Fname">Name : </label></td>
+                    <td><input type="text" id="Fname" name="Fname" placeholder="Enter First Name" required/></td>
+                </tr>
+                <tr></tr><tr></tr><tr></tr>
+                <tr>
+                    <td><label for="Lname">Last Name : </label></td>
+                    <td><input type="text" id="Lname" name="Lname" placeholder="Enter Last Name" required/></td>
+                </tr>
+                <tr></tr>
+                <tr>
+                    <td><label for="dob">Date of Birth : </label></td>
+                    <td><input type="text" id="dob" name="dob" placeholder="dd/mm/yyyy" required/></td>
+                </tr>
+                <tr>
+                    <td><label for="gender">Gender : </label></td>
+                    <td><input type="radio" name="gender" id="gender" value="female"/>Female
+                        <input type="radio" name="gender" id="gender" value="male"/>Male
+                        <input type="radio" name="gender" id="gender" value="other"/>Other</td>
+                </tr>
+                <tr>
+                    <td><label for="occupation">Ocuupation : </label></td>
+                    <td><input type="text" id="occupation" name="occupation" placeholder="Ex: IT or Dental" required/><br/><br/></td>
+                </tr>
+                <tr>
+                    <td><label for="caste/religion">Caste/Religion : </label></td>
+                    <td><input type="text" id="caste/religion" name="caste/religion" placeholder="Enter Caste/Religion" required/><br/><br/></td>
+                </tr>
+                <tr>
+                    <td><label for="city">City : </label></td>
+                    <td><input type="text" id="city" name="city" placeholder="Enter City" required/><br/><br/></td>
+                </tr>
+                <tr>
+                    <td><label for="pincode">Pin Code : </label></td>
+                    <td><input type="text" id="pincode" name="pincode" placeholder="Ex: 411041" required/><br/><br/></td>
+                </tr>
+            </table>
+            
+                <button type="submit" onclick="generateresult" >Generate</button>
+                <button type="reset" >Reset</button>
+
+        </form>
+        
+        
+    </body>
+</html>
+
+<!-- <form method="post" action="/Result" align="center">
+    <table align="center">
+        <tr>
+            <td><label> Name : </label></td>
+            <td><input type="text" id="Fname" name="Fname" placeholder="Enter First Name"/><br/><br/></td>
+        </tr>
+        <tr>
+            <td>Last Name : </td>
+            <td><input type="text" id="Lname" name="Lname" placeholder="Enter Last Name"/><br/><br/></td>
+        </tr>
+        <tr>
+            <td>Date of Birth : </td>
+            <td><input type="text" id="dob" name="dob" placeholder="dd/mm/yyyy"/><br/><br/></td>
+        </tr>
+        <tr>
+            <td>Gender : </td>
+            <td><input type="radio" name="gender" id="gender" value="female"/>Female
+                <input type="radio" name="gender" id="gender" value="male"/>Male
+                <input type="radio" name="gender" id="gender" value="other"/>Other</td>
+        </tr>
+        <tr>
+            <td>Ocuupation : </td>
+            <td><input type="text" id="occupation" name="occupation" placeholder="Ex: IT or Dental"/><br/><br/></td>
+        </tr>
+        <tr>
+            <td>Caste/Religion : </td>
+            <td><input type="text" id="caste/religion" name="caste/religion" placeholder="Enter Caste/Religion"/><br/><br/></td>
+        </tr>
+        <tr>
+            <td>City : </td>
+            <td><input type="text" id="city" name="city" placeholder="Enter City"/><br/><br/></td>
+        </tr>
+        <tr>
+            <td>Pin Code : </td>
+            <td><input type="text" id="pincode" name="pincode" placeholder="Ex: 411041"/><br/><br/></td>
+        </tr>
+    </table>
+</form> -->
